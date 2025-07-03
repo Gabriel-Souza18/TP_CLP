@@ -43,8 +43,8 @@ class MainActivity : AppCompatActivity() {
 
         //Corrotina
         GlobalScope.launch(Dispatchers.IO) {
-            while(true) {
-                delay(30000)
+            for (i in 1..100) {
+                delay(30000)//30 segundos
                 Log.d("MainActivity", "Atualizando banco de dados")
                 withContext(Dispatchers.Main) {
                     TesteJava().atualizarBancoDeDados(this@MainActivity)
